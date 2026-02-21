@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/page";
 import { Toaster } from "react-hot-toast";
-import { SessionProvider } from "next-auth/react";
+import { Providers } from "@/components/Providers";
 
 //export const metadata: Metadata = {
   //title: "Shop Mart",
@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider>
+        <Providers>
           <Navbar/>
           <div className="container mx-auto p-3">
             <Toaster/>
             {children}
           </div>
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   );
